@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+    <!-- ordre  de priorite : byname - bytype - default -->
+    
+    <bean name="p1" class="org.spring.Personne">
+		<property name="nom" value="Nom_01" />
+	</bean>
+	
+	<bean name="p2" class="org.spring.Personne" autowire="byType">
+		<property name="nom" value="Nom_02" />
+	</bean>
+	
+	<bean name="p3" class="org.spring.Personne" autowire="byName">
+		<property name="nom" value="Nom_03" />
+	</bean>
+	
+	 
+	<bean name="v1" class="org.spring.Vehicule" >
+		<property name="energie" value="Essence" />
+		<property name="id" value="101" />
+	</bean>
+	
+	<bean id="vehicule" class="org.spring.Vehicule" >
+		<property name="energie" value="Essence" />
+		<property name="id" value="102" />
+	</bean>
+</beans>
